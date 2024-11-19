@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner s1 = new Scanner(System.in);
         double[] salaries = new double[10];
         
         // دریافت حقوق ۱۰ کارمند
         for (int i = 0; i < 10; i++) {
             System.out.print("لطفاً حقوق کارمند " + (i + 1) + " را وارد کنید: ");
-            salaries[i] = scanner.nextDouble();
+            salaries[i] = s1.nextDouble();
         }
         
         System.out.println("\nکارمندان با حقوق بالای ۵,۷۰۰,۰۰۰ تومان و حقوق نهایی آن‌ها پس از بیمه و حق اولاد:");
@@ -18,10 +18,10 @@ public class Main {
             
             // بررسی حقوق بالای ۵,۷۰۰,۰۰۰
             if (salary > 5700000) {
-                double insuranceDeduction = salary * 0.05;   // کم کردن ۵ درصد برای بیمه
-                double childAllowance = salary * 0.07;       // اضافه کردن ۷ درصد برای حق اولاد
+                double insurance = salary * 0.05;   // کم کردن ۵ درصد برای بیمه
+                double childallowance = salary * 0.07;       // اضافه کردن ۷ درصد برای حق اولاد
                 
-                double finalSalary = salary - insuranceDeduction + childAllowance;
+                double finalSalary = salary - insurance + childallowance;
                 
                 System.out.println("حقوق کارمند " + (i + 1) + ": " + salary + " تومان -> حقوق نهایی: " + finalSalary + " تومان");
             }
